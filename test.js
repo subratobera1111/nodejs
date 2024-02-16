@@ -1,94 +1,96 @@
-// reading files
+// ------------------- reading files ------------------- 
 
-// const fs = require("fs");
+const fs = require("fs");
 
-// fs.readFile("./blog1.txt", (err, data) => {
-//   if (err) {
-//     console.log(err);
-//   }
-//   console.log(data.toString());
-// });
+fs.readFile("./blog1.txt", (err, data) => {
+  if (err) {
+    console.log(err);
+  }
+  console.log(data.toString());
+});
 
-// console.log("last line");
+console.log("last line");
 
-// writing files
-// const fs = require("fs");
 
-// fs.writeFile("./blog1.txt", "business", async () => {
-//   console.log("file has been written");
-// });
+// <------------------- writing files -------------------->
 
-// fs.writeFile("./blog1.txt", "subrato", () => {
-//   console.log("file has been written");
-// });
+const fs = require("fs");
 
-// directories
+fs.writeFile("./blog1.txt", "business", async () => {
+  console.log("file has been written");
+});
 
-// const fs = require("fs");
+fs.writeFile("./blog1.txt", "subrato", () => {
+  console.log("file has been written");
+});
 
-// if (!fs.existsSync("./assets")) {
-//   fs.mkdir("./assets", (err) => {
-//     if (err) {
-//       console.log(err);
-//     }
-//     console.log("folder created");
-//   });
+// -------------------  directories ------------------- 
 
-// } else {
+const fs = require("fs");
 
-//   fs.rmdir("./assets", (err) => {
-//     if (err) {
-//       console.log(err);
-//     }
-//     console.log("folder deleted");
-//   });
-// }
+if (!fs.existsSync("./assets")) {
+  fs.mkdir("./assets", (err) => {
+    if (err) {
+      console.log(err);
+    }
+    console.log("folder created");
+  });
 
-// stream and buffers
+} else {
 
-// const fs = require("fs");
+  fs.rmdir("./assets", (err) => {
+    if (err) {
+      console.log(err);
+    }
+    console.log("folder deleted");
+  });
+}
 
-// const readStream = fs.createReadStream("./blog3.txt", { encoding: "utf8" });
-// const writeStream = fs.createWriteStream("./blog4.txt");
-// readStream.on("data", (chunk) => {
-//   console.log("----- NEW CHUNK --- -");
-//   console.log(chunk);
-//   writeStream.write('\n NEW CHUNK \n');
-//   writeStream.write(chunk);
-// });
+// -------------------  stream and buffers ------------------- 
 
-// servers
+const fs = require("fs");
 
-// const http = require("http");
+const readStream = fs.createReadStream("./blog3.txt", { encoding: "utf8" });
+const writeStream = fs.createWriteStream("./blog4.txt");
+readStream.on("data", (chunk) => {
+  console.log("----- NEW CHUNK --- -");
+  console.log(chunk);
+  writeStream.write('\n NEW CHUNK \n');
+  writeStream.write(chunk);
+});
 
-// const server = http.createServer((req, res) => {
-//   console.log("request made");
-// });
+// -------------------  servers ------------------- 
 
-// server.listen(3000, "localhost", () => {
-//   console.log("listening for requests on port 3000");
-// });
+const http = require("http");
 
-//requests and response
+const server = http.createServer((req, res) => {
+  console.log("request made");
+});
 
-// const http = require("http");
+server.listen(3000, "localhost", () => {
+  console.log("listening for requests on port 3000");
+});
 
-// const server = http.createServer((req, res) => {
-//   console.log(req.url, req.method);
+//  -------------------  requests and response ------------------- 
 
-//   res.setHeader("Content-Type", "text/htm1");
+const http = require("http");
 
-//   res.write('<head> <link rel="stylesheet" href="#"></head>');
-//   res.write("<p>hello, ninjas </p>");
-//   res.write("<p>hello again, ninjas</p>");
-//   res.end();
-// });
+const server = http.createServer((req, res) => {
+  console.log(req.url, req.method);
 
-// server.listen(3000, "localhost", () => {
-//   console.log("listening for requests on port 3000");
-// });
+  res.setHeader("Content-Type", "text/htm1");
 
-//routing
+  res.write('<head> <link rel="stylesheet" href="#"></head>');
+  res.write("<p>hello, ninjas </p>");
+  res.write("<p>hello again, ninjas</p>");
+  res.end();
+});
+
+server.listen(3000, "localhost", () => {
+  console.log("listening for requests on port 3000");
+});
+
+// -------------------  routing ------------------- 
 
 const http = require("http");
 const fs = require("fs");
